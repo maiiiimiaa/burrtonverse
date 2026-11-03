@@ -1,0 +1,334 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#100b17">
+  <meta name="description" content="Explorá BURTONVERSE, un archivo cinematográfico fan dedicado a los mundos fantásticos, personajes y películas de Tim Burton.">
+
+  <title>BURTONVERSE | Archivo cinematográfico</title>
+  <link rel="icon" type="image/png" href="favicon.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="#inicio" aria-label="BURTONVERSE, inicio">
+      B✦
+      <span>
+        BURTON<em>VERSE</em>
+        <small>ARCHIVO CINEMATOGRÁFICO</small>
+      </span>
+    </a>
+
+    <button
+      id="menuBtn"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="nav"
+    >☰</button>
+
+    <nav id="nav">
+      <a href="#archivo">El archivo</a>
+      <a href="#trivia">La trivia</a>
+      <a href="#secreto">Expediente secreto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section class="hero" id="inicio">
+      <div class="moon" aria-hidden="true"></div>
+      <div class="fog" aria-hidden="true"></div>
+
+      <p class="eyebrow">✦ UNA PUERTA A LO EXTRAORDINARIO ✦</p>
+
+      <h1>
+        Bienvenidos al<br>
+        <em>BURTONVERSE</em>
+      </h1>
+
+      <p class="lead">
+        Donde lo extraño encuentra su lugar,<br>
+        los monstruos tienen corazón y la oscuridad cuenta historias.
+      </p>
+
+      <a class="btn" href="#archivo">ENTRAR AL ARCHIVO ↘</a>
+
+      <div class="hero-bottom">
+        <span>COLECCIÓN DE CINE FANTÁSTICO</span>
+        <span>DESLIZÁ PARA EXPLORAR ↓</span>
+      </div>
+    </section>
+
+   <!-- INTRODUCCIÓN -->
+<div class="hero-art">
+    <img src="./burtonverse-personajes.jpg"
+         alt="Personajes de Burtonverse">
+</div>
+
+<div class="hero-description">
+    <h2>
+        Un poco de oscuridad<br>
+        hace brillar la <em>magia.</em>
+    </h2>
+
+    <p>
+        Explorá criaturas inolvidables, pueblos imposibles y personajes
+        que nunca encajaron del todo. Cada película abre la puerta a otro mundo.
+    </p>
+</div>
+
+    <!-- CATÁLOGO -->
+    <section class="section" id="archivo">
+      <div class="section-head">
+        <div>
+          <small>02 / CATÁLOGO DE SOMBRAS</small>
+          <h2>El <em>archivo</em> cinematográfico</h2>
+          <p>
+            Buscá películas o filtrá por categoría.
+            Tocá una tarjeta para abrir su expediente.
+          </p>
+        </div>
+
+        <strong class="counter" id="counter">
+          00
+          <small>EXPEDIENTES</small>
+        </strong>
+      </div>
+
+      <label class="search">
+        <span aria-hidden="true">⌕</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Buscar película, personaje o género…"
+          autocomplete="off"
+          aria-label="Buscar películas"
+        >
+      </label>
+
+      <div class="filters" id="filters" aria-label="Filtrar películas">
+        <button type="button" class="active" data-category="Todas" aria-pressed="true">
+          Todas
+        </button>
+        <button type="button" data-category="Animación" aria-pressed="false">
+          Animación
+        </button>
+        <button type="button" data-category="Fantasía" aria-pressed="false">
+          Fantasía
+        </button>
+        <button type="button" data-category="Comedia oscura" aria-pressed="false">
+          Comedia oscura
+        </button>
+        <button type="button" data-category="Drama fantástico" aria-pressed="false">
+          Drama fantástico
+        </button>
+      </div>
+
+      <div class="movie-grid" id="movieGrid"></div>
+
+      <p id="empty" hidden>
+        No encontramos ese expediente. Probá otra búsqueda.
+      </p>
+    </section>
+
+    <!-- TRIVIA -->
+    <section class="section feature" id="trivia">
+      <small>03 / MÁS ALLÁ DE LA PANTALLA</small>
+
+      <div class="feature-box">
+        <div>
+          <h2>
+            ¿Cuánto conocés<br>
+            estos <em>mundos?</em>
+          </h2>
+
+          <p>
+            Contestá cinco preguntas y descubrí tu nivel de detective cinematográfico.
+          </p>
+
+          <button class="btn" id="startQuiz" type="button">
+            COMENZAR LA TRIVIA ↗
+          </button>
+        </div>
+
+        <div class="playing-card" aria-label="Carta misteriosa">
+          <small>EXPEDIENTE Nº 013</small>
+          <span aria-hidden="true">◉</span>
+          <b>¿QUIÉN SOY?</b>
+          <i>OBSERVÁ LAS PISTAS</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPEDIENTE SECRETO -->
+    <section class="section" id="secreto">
+      <small>04 / ACCESO RESTRINGIDO</small>
+
+      <div class="secret">
+        <div class="door" aria-hidden="true">?</div>
+
+        <div>
+          <h2>
+            Hay algo detrás<br>
+            de la <em>puerta.</em>
+          </h2>
+
+          <p>
+            Encontrá la clave para desbloquear el mensaje secreto.
+          </p>
+
+          <form id="secretForm">
+            <label for="secretCode">INGRESÁ LA CLAVE</label>
+
+            <div class="secret-input">
+              <input
+                id="secretCode"
+                name="secretCode"
+                type="text"
+                placeholder="Escribí tu respuesta…"
+                autocomplete="off"
+              >
+
+              <button type="submit" aria-label="Comprobar clave">↗</button>
+            </div>
+
+            <small>
+              Pista: es el nombre del universo que estás explorando.
+            </small>
+          </form>
+
+          <p id="secretFeedback" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FICHA DE PELÍCULA -->
+  <div class="backdrop" id="movieModal">
+    <article
+      class="modal movie-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      aria-describedby="modalSynopsis"
+    >
+      <button
+        class="close"
+        type="button"
+        data-close
+        aria-label="Cerrar ficha"
+      >×</button>
+
+      <div class="modal-poster" id="modalPoster">
+        <span id="modalGlyph" aria-hidden="true"></span>
+        <small id="modalYear"></small>
+      </div>
+
+      <div class="modal-info">
+        <small id="modalCategory"></small>
+
+        <h2 id="modalTitle">Expediente cinematográfico</h2>
+
+        <p id="modalMeta"></p>
+        <p id="modalSynopsis"></p>
+
+        <div class="detail">
+          <b>PERSONAJES</b>
+          <p id="modalCharacters"></p>
+        </div>
+
+        <div class="detail">
+          <b>DETALLE DEL EXPEDIENTE</b>
+          <p id="modalFact"></p>
+        </div>
+
+        <a
+          class="btn"
+          id="modalTrailer"
+          href="https://www.youtube.com/results?search_query=Tim+Burton+official+movie+trailers"
+          target="_blank"
+          rel="noopener noreferrer"
+        >VER TRÁILER ↗</a>
+
+        <button class="btn" type="button" data-close>
+          VOLVER AL ARCHIVO
+        </button>
+      </div>
+    </article>
+  </div>
+
+  <!-- TRIVIA INTERACTIVA -->
+  <div class="backdrop" id="quizModal">
+    <article
+      class="modal quiz-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="quizTitle"
+    >
+      <button
+        class="close"
+        type="button"
+        data-close
+        aria-label="Cerrar trivia"
+      >×</button>
+
+      <small>PRUEBA DE OBSERVACIÓN</small>
+
+      <div class="progress" aria-label="Progreso de la trivia">
+        <span id="progress"></span>
+      </div>
+
+      <p id="quizNumber"></p>
+      <h2 id="quizTitle"></h2>
+
+      <div id="quizOptions" class="options"></div>
+
+      <p id="quizFeedback" aria-live="polite"></p>
+
+      <button
+        class="btn"
+        id="nextQuestion"
+        type="button"
+        disabled
+      >SIGUIENTE →</button>
+
+      <div id="quizResult" hidden></div>
+    </article>
+  </div>
+  
+<div id="bone-cursor">
+    <svg class="hand hand-open" viewBox="0 0 64 64">
+        <g fill="#e9dfd2" stroke="#302139" stroke-width="2.5" stroke-linejoin="round">
+            <path d="M19 34 L17 17 Q17 12 21 12 Q25 12 25 17 L26 29 L27 7 Q27 2 31 2 Q35 2 35 7 L35 28 L39 12 Q40 8 44 9 Q48 10 47 15 L42 31 L49 23 Q53 20 56 24 Q58 27 54 32 L43 49 Q39 57 29 57 Q19 57 15 47 L10 37 Q8 33 12 31 Q16 29 19 34Z"/>
+        </g>
+        <g fill="none" stroke="#9b80ad" stroke-width="1.5">
+            <path d="M25 18 L35 18 M26 23 L35 23 M26 28 L35 28 M18 39 L25 43 M34 42 L43 38"/>
+        </g>
+    </svg>
+
+    <svg class="hand hand-closed" viewBox="0 0 64 64">
+        <g fill="#e9dfd2" stroke="#302139" stroke-width="2.5" stroke-linejoin="round">
+            <path d="M17 29 L19 17 Q20 13 24 14 Q28 15 27 19 L26 27 L29 14 Q31 10 35 12 Q39 13 37 18 L35 27 L40 17 Q43 14 46 17 Q49 20 46 24 L43 31 L50 27 Q55 26 56 30 Q57 34 52 37 L42 48 Q37 56 28 54 L17 48 Q11 44 12 37Z"/>
+        </g>
+        <g fill="none" stroke="#9b80ad" stroke-width="1.5">
+            <path d="M20 31 L30 34 M29 25 L37 28 M38 25 L45 28 M22 43 L34 47 M36 45 L45 40"/>
+        </g>
+    </svg>
+</div>
+
+</body>
+</html>
